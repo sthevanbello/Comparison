@@ -16,7 +16,9 @@ namespace ExampleComparison
             list.Add(new Product("Tablet", 450.00));
             list.Add(new Product("SmartPhone", 1000.00));
 
-            list.Sort(CompareProducts);
+            Comparison<Product> comparison = (p1, p2) => p1.Name.ToUpper().CompareTo(p2.Name.ToUpper());
+
+            list.Sort(comparison);
 
             foreach (Product item in list)
             {
@@ -26,9 +28,6 @@ namespace ExampleComparison
             Console.ReadKey();
         }
 
-        static int CompareProducts(Product p1, Product p2)
-        {
-            return p1.Name.ToUpper().CompareTo(p2.Name.ToUpper());
-        }
+       
     }
 }
