@@ -16,9 +16,9 @@ namespace ExampleComparison
             list.Add(new Product("Tablet", 450.00));
             list.Add(new Product("SmartPhone", 1000.00));
 
-            Comparison<Product> comparison = (p1, p2) => p1.Name.ToUpper().CompareTo(p2.Name.ToUpper());
+            //Comparison<Product> comparison = (p1, p2) => p1.Name.ToUpper().CompareTo(p2.Name.ToUpper());
 
-            list.Sort(comparison);
+            list.Sort((p1, p2) => p1.Name.ToUpper().CompareTo(p2.Name.ToUpper()));
 
             foreach (Product item in list)
             {
